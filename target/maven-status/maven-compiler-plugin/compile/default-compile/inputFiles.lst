@@ -3,6 +3,7 @@ D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\hibernate\Hiber
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\service\SongService.java
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\model\Gerne.java
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\service\impl\SongServiceImpl.java
+D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\config\HibernateConfiguration.java
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\config\WebMvcConfig.java
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\hibernate\QueryTest.java
 D:\Esclip\MusicManagerProject\src\main\java\com\tma\musicmanager\model\Song.java

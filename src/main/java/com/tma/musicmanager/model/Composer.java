@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Composer")
+@Table(name = "composer")
 public class Composer {
 	private Integer composerID;
 	private String composerName;

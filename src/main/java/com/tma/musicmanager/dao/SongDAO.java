@@ -9,7 +9,7 @@ public interface SongDAO {
 
 	List<Song> getAllSong();
 
-	Song get(Integer songID);
+	Song getSong(Integer songID);
 
 	void addSong(Song song);
 

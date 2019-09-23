@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 
 import com.tma.musicmanager.dao.SongDAO;
 import com.tma.musicmanager.hibernate.HibernateUtils;
@@ -18,8 +17,7 @@ import com.tma.musicmanager.model.Song;
 
 @Transactional
 public class SongDAOImpl implements SongDAO {
-
-	@PersistenceContext(unitName = "song-hibernate")
+	@PersistenceContext
 	private EntityManager entityManager;
 
 	public void setEntityManager(EntityManager entityManager) {
@@ -32,17 +30,12 @@ public class SongDAOImpl implements SongDAO {
 
 	@Transactional(Transactional.TxType.SUPPORTS)
 	public List<Song> getAllSong() {
-
-		TypedQuery<Song> query = entityManager.createQuery("SELECT s FROM Song s", Song.class);
-
-		// for(Song s: query) System.out.println(s.);
-
+		TypedQuery<Song> query = entityManager.createQuery("SELECT s FROM song s", Song.class);
 		return query.getResultList();
-
 	}
 
 	@Transactional(Transactional.TxType.SUPPORTS)
-	public Song get(Integer songID) {
+	public Song getSong(Integer songID) {
 		return entityManager.find(Song.class, songID);
 	}
 
@@ -59,7 +52,7 @@ public class SongDAOImpl implements SongDAO {
 
 	@Transactional(Transactional.TxType.REQUIRES_NEW)
 	public void removeSong(int songID) {
-		Song song = get(songID);
+		Song song = getSong(songID);
 		entityManager.remove(song);
 	}
 

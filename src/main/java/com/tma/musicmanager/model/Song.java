@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Song")
+@Table(name = "song")
 public class Song {
 	private Integer SongID;
 	private String songName;

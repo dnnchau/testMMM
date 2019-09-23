@@ -2,11 +2,13 @@ package com.tma.musicmanager.service;
 
 import java.util.List;
 
-import com.tma.musicmanager.model.Song;
+import org.springframework.stereotype.Service;
 
+import com.tma.musicmanager.model.Song;
+@Service
 public interface SongService {
 	List <Song> getAllSong(); 
-	Song get(Integer songID);
+	Song getSong(Integer songID);
 	void add(Song song);
 	void update(Song song);
 	void remove(int songID);

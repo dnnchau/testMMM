@@ -2,10 +2,12 @@ package com.tma.musicmanager.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.tma.musicmanager.dao.SongDAO;
 import com.tma.musicmanager.model.Song;
 import com.tma.musicmanager.service.SongService;
-
+@Service
 public class SongServiceImpl implements SongService {
 
 	private SongDAO songDAO;
@@ -22,8 +24,8 @@ public class SongServiceImpl implements SongService {
 		return songDAO.getAllSong();
 	}
 
-	public Song get(Integer songID) {
-		return songDAO.get(songID);
+	public Song getSong(Integer songID) {
+		return songDAO.getSong(songID);
 	}
 
 	public void add(Song song) {

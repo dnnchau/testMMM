@@ -3,14 +3,6 @@ package com.tma.musicmanager.controller;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,29 +12,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tma.musicmanager.dao.SongDAO;
+import com.tma.musicmanager.dao.impl.SongDAOImpl;
 import com.tma.musicmanager.model.Song;
 import com.tma.musicmanager.service.SongService;
 
 @RestController
 @RequestMapping("/song")
 public class SongRESTController {
-
+	@Autowired
+	private SongService songService;
+	
 	@RequestMapping("")
 	@ResponseBody
 	public String welcome() {
 		return "Welcome to Rest";
 	}
 
-	private SongService songService;
-
-	/*
-	 * @RequestMapping(value = "/", method = RequestMethod.GET, produces = {
-	 * MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	 */
-
-	@GetMapping(value = "/songs")
+	// @GetMapping(value = "/songs")
+	@RequestMapping(value = "/songs", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
 	public List<Song> getSongs() {
-
 		List<Song> list = songService.getAllSong();
 		return list;
 
@@ -53,7 +43,7 @@ public class SongRESTController {
 	 * @GetMapping(value = "/songs/{songId}", produces = {
 	 * MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }) public
 	 * Song getSong(@PathVariable("songId") Integer songId) { return
-	 * songService.get(songId); }
+	 * songService.getSong(songId); }
 	 */
 
 	/*

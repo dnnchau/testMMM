@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
+import com.tma.musicmanager.config.HibernateConfiguration;
 import com.tma.musicmanager.hibernate.HibernateUtils;
 import com.tma.musicmanager.model.Gerne;
 import com.tma.musicmanager.model.Song;
@@ -13,7 +14,9 @@ import com.tma.musicmanager.model.Song;
 public class QueryTest {
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtils.getSessionFactory();
-
+		
+	
+		
 		Session session = factory.getCurrentSession();
 		try {
 			session.getTransaction().begin();
