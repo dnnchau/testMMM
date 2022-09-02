@@ -120,7 +120,7 @@
 
 		<!-- https://mvnrepository.com/artifact/org.wildfly.core/wildfly-server -->
 		<dependency> <groupId>org.wildfly.core</groupId> <artifactId>wildfly-server</artifactId> 
-			<version>9.0.2.Final</version> </dependency>
+			<version>16.0.1.Final</version> </dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
 		<dependency>
